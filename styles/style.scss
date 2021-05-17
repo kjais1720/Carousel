@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.8);
+
+    button{
+        color: black;
+        padding: 10px;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .left-button{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .right-button{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+
+    .slide{
+        position: absolute;
+        transform: translateX(-100%);
+        z-index: -99;
+        transition: transform ease 1s;
+    }
+
+    .slide.active{
+        position: relative;
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+        width: 100%;
+    }
+
+    .slide-buttons{
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        div{
+            width: 20px;
+            height: 20px;
+            background-image: radial-gradient(circle, rgb(92, 92, 95) 50%, transparent 50%);
+            padding: 2px;
+            border: solid 2px rgb(92, 92, 95);
+            border-radius: 50% ;
+            cursor: pointer;
+
+            &:active{
+                transform: scale(0.8);
+            }
+        }
+
+        div.active{
+            border-color: yellow;
+        }
+    }
+
+
+
+}

@@ -1,0 +1,102 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.8);
+}
+
+.container button {
+  color: black;
+  padding: 10px;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.container .left-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .right-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .slide {
+  position: absolute;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  z-index: -99;
+  -webkit-transition: -webkit-transform ease 1s;
+  transition: -webkit-transform ease 1s;
+  transition: transform ease 1s;
+  transition: transform ease 1s, -webkit-transform ease 1s;
+}
+
+.container .slide.active {
+  position: relative;
+  display: block;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  width: 100%;
+}
+
+.container .slide-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container .slide-buttons div {
+  width: 20px;
+  height: 20px;
+  background-image: radial-gradient(circle, #5c5c5f 50%, transparent 50%);
+  padding: 2px;
+  border: solid 2px #5c5c5f;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.container .slide-buttons div:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.container .slide-buttons div.active {
+  border-color: yellow;
+}
+/*# sourceMappingURL=style.css.map */
